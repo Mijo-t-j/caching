@@ -1,0 +1,12 @@
+asgiref==3.8.1
+Django==5.1.4
+django-socio-grpc==0.24.1
+djangorestframework==3.15.2
+grpcio==1.69.0
+grpcio-health-checking==1.69.0
+grpcio-tools==1.69.0
+lark==1.2.2
+pillow==11.1.0
+protobuf==5.29.3
+psycopg2==2.9.10
+sqlparse==0.5.3
