@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package matches;
+
+// import "google/protobuf/empty.proto";
+
+service MatchesController {
+    rpc Retrieve(RetrieveRequest) returns (MatchesRetrieveResponse) {}
+}
+message MatchesListResponse {
+    repeated MatchesRetrieveResponse results = 1;
+}
+message RetrieveRequest {
+    int32 id = 1;
+}
+message MatchesRetrieveResponse {
+    int32 id = 1;
+}

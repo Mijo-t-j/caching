@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_socio_grpc',
     'sample.apps.SampleConfig',
 ]
 
@@ -128,3 +129,24 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+GRPC_PAGE_SIZE = os.environ.get('GRPC_PAGE_SIZE', 20)
+GRPC_FRAMEWORK = {
+    "ROOT_HANDLERS_HOOK" : 'src.handlers.grpc_handlers',
+    "SERVER_OPTIONS": [
+        ("grpc.max_send_message_length", 100 * 1024 * 1024),
+        ("grpc.max_receive_message_length", 100 * 1024 * 1024),
+        ("grpc.keepalive_time_ms", 60000),
+        ("grpc.keepalive_timeout_ms", 20000)
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+        "rest_framework.authentication.TokenAuthentication",
+    ),
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    "MAP_METADATA_KEYS": {
+        "PAGINATION": "PAGINATION",
+        "FILTERS": "FILTERS",
+    },
+}
