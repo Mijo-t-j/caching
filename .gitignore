@@ -1,0 +1,11 @@
+env
+.env
+venv
+.venv
+**/migrations/*
+!**/migrations/__init__.py
+__pycache__/
+/media/
+/staticfiles/
+logs/debug.log
+/matches/
