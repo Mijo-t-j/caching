@@ -15,4 +15,25 @@ message RetrieveRequest {
 }
 message MatchesRetrieveResponse {
     int32 id = 1;
+    Tournament tournament = 3;
+    message Tournament {
+        int32 id = 1;
+        string name = 2;
+        string logo = 3;
+    }
+    HomeTeam home_team = 4;
+    message HomeTeam {
+        int32 id = 1;
+        string name = 2;
+        string logo = 3;
+    }
+    AwayTeam away_team = 5;
+    message AwayTeam {
+        int32 id = 1;
+        string name = 2;
+        string logo = 3;
+    }
+    string home_team_score = 6;
+    string away_team_score = 7;
+    string status = 8;
 }
