@@ -28,7 +28,7 @@ DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11grpc/sample.pr
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
-_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'grpc.sample_pb2', _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'sample.grpc.sample_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_LISTREQUEST']._serialized_start=30
