@@ -9,7 +9,7 @@ from sample.models import (
 from sample.serializers import (
     MatchesRetriveProtoSerializer
 )
-
+from django_socio_grpc.decorators import cache_endpoint
 class StandardResultsSetPagination(PageNumberPagination):
     page_size = settings.GRPC_PAGE_SIZE
     page_query_param = 'page'
@@ -21,3 +21,15 @@ class MatchesService(mixins.AsyncListModelMixin, mixins.AsyncRetrieveModelMixin,
     queryset = Matches.objects.all()
     serializer_class = MatchesRetriveProtoSerializer
     pagination_class = StandardResultsSetPagination
+
+    
+    def Retrieve(self, request, context):
+        self.serializer_class = MatchesRetriveProtoSerializer
+        return super(MatchesService, self).Retrieve(request, context)
+    
+    def List(self, request, context):
+        return super(MatchesService, self).List(request, context)
+    
+    # @cache_endpoint(300)
+    # async def List(self, request, context):
+    #     return await super().List(request, context)

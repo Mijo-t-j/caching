@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-3cye3qva=q=g#gi4au1w+wnmx0aa%olfg=kx0*$*-$bk47=(&3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -149,4 +149,11 @@ GRPC_FRAMEWORK = {
         "PAGINATION": "PAGINATION",
         "FILTERS": "FILTERS",
     },
+}
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",
+    }
 }

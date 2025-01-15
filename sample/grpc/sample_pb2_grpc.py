@@ -41,6 +41,11 @@ class MatchesControllerStub(object):
                 request_serializer=grpc_dot_sample__pb2.RetrieveRequest.SerializeToString,
                 response_deserializer=grpc_dot_sample__pb2.MatchesRetrieveResponse.FromString,
                 _registered_method=True)
+        self.List = channel.unary_unary(
+                '/matches.MatchesController/List',
+                request_serializer=grpc_dot_sample__pb2.ListRequest.SerializeToString,
+                response_deserializer=grpc_dot_sample__pb2.MatchesListResponse.FromString,
+                _registered_method=True)
 
 
 class MatchesControllerServicer(object):
@@ -54,6 +59,12 @@ class MatchesControllerServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def List(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_MatchesControllerServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -61,6 +72,11 @@ def add_MatchesControllerServicer_to_server(servicer, server):
                     servicer.Retrieve,
                     request_deserializer=grpc_dot_sample__pb2.RetrieveRequest.FromString,
                     response_serializer=grpc_dot_sample__pb2.MatchesRetrieveResponse.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=grpc_dot_sample__pb2.ListRequest.FromString,
+                    response_serializer=grpc_dot_sample__pb2.MatchesListResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -92,6 +108,33 @@ class MatchesController(object):
             '/matches.MatchesController/Retrieve',
             grpc_dot_sample__pb2.RetrieveRequest.SerializeToString,
             grpc_dot_sample__pb2.MatchesRetrieveResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/matches.MatchesController/List',
+            grpc_dot_sample__pb2.ListRequest.SerializeToString,
+            grpc_dot_sample__pb2.MatchesListResponse.FromString,
             options,
             channel_credentials,
             insecure,

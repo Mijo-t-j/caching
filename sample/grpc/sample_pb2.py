@@ -24,25 +24,27 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11grpc/sample.proto\x12\x07matches\"H\n\x13MatchesListResponse\x12\x31\n\x07results\x18\x01 \x03(\x0b\x32 .matches.MatchesRetrieveResponse\"\x1d\n\x0fRetrieveRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"\xc2\x03\n\x17MatchesRetrieveResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12?\n\ntournament\x18\x03 \x01(\x0b\x32+.matches.MatchesRetrieveResponse.Tournament\x12<\n\thome_team\x18\x04 \x01(\x0b\x32).matches.MatchesRetrieveResponse.HomeTeam\x12<\n\taway_team\x18\x05 \x01(\x0b\x32).matches.MatchesRetrieveResponse.AwayTeam\x12\x17\n\x0fhome_team_score\x18\x06 \x01(\t\x12\x17\n\x0f\x61way_team_score\x18\x07 \x01(\t\x12\x0e\n\x06status\x18\x08 \x01(\t\x1a\x34\n\nTournament\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\t\x1a\x32\n\x08HomeTeam\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\t\x1a\x32\n\x08\x41wayTeam\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\t2]\n\x11MatchesController\x12H\n\x08Retrieve\x12\x18.matches.RetrieveRequest\x1a .matches.MatchesRetrieveResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11grpc/sample.proto\x12\x07matches\"\r\n\x0bListRequest\"H\n\x13MatchesListResponse\x12\x31\n\x07results\x18\x01 \x03(\x0b\x32 .matches.MatchesRetrieveResponse\"\x1d\n\x0fRetrieveRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"\xc2\x03\n\x17MatchesRetrieveResponse\x12\n\n\x02id\x18\x01 \x01(\x05\x12?\n\ntournament\x18\x03 \x01(\x0b\x32+.matches.MatchesRetrieveResponse.Tournament\x12<\n\thome_team\x18\x04 \x01(\x0b\x32).matches.MatchesRetrieveResponse.HomeTeam\x12<\n\taway_team\x18\x05 \x01(\x0b\x32).matches.MatchesRetrieveResponse.AwayTeam\x12\x17\n\x0fhome_team_score\x18\x06 \x01(\t\x12\x17\n\x0f\x61way_team_score\x18\x07 \x01(\t\x12\x0e\n\x06status\x18\x08 \x01(\t\x1a\x34\n\nTournament\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\t\x1a\x32\n\x08HomeTeam\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\t\x1a\x32\n\x08\x41wayTeam\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\t2\x9b\x01\n\x11MatchesController\x12H\n\x08Retrieve\x12\x18.matches.RetrieveRequest\x1a .matches.MatchesRetrieveResponse\"\x00\x12<\n\x04List\x12\x14.matches.ListRequest\x1a\x1c.matches.MatchesListResponse\"\x00\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'grpc.sample_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_MATCHESLISTRESPONSE']._serialized_start=30
-  _globals['_MATCHESLISTRESPONSE']._serialized_end=102
-  _globals['_RETRIEVEREQUEST']._serialized_start=104
-  _globals['_RETRIEVEREQUEST']._serialized_end=133
-  _globals['_MATCHESRETRIEVERESPONSE']._serialized_start=136
-  _globals['_MATCHESRETRIEVERESPONSE']._serialized_end=586
-  _globals['_MATCHESRETRIEVERESPONSE_TOURNAMENT']._serialized_start=430
-  _globals['_MATCHESRETRIEVERESPONSE_TOURNAMENT']._serialized_end=482
-  _globals['_MATCHESRETRIEVERESPONSE_HOMETEAM']._serialized_start=484
-  _globals['_MATCHESRETRIEVERESPONSE_HOMETEAM']._serialized_end=534
-  _globals['_MATCHESRETRIEVERESPONSE_AWAYTEAM']._serialized_start=536
-  _globals['_MATCHESRETRIEVERESPONSE_AWAYTEAM']._serialized_end=586
-  _globals['_MATCHESCONTROLLER']._serialized_start=588
-  _globals['_MATCHESCONTROLLER']._serialized_end=681
+  _globals['_LISTREQUEST']._serialized_start=30
+  _globals['_LISTREQUEST']._serialized_end=43
+  _globals['_MATCHESLISTRESPONSE']._serialized_start=45
+  _globals['_MATCHESLISTRESPONSE']._serialized_end=117
+  _globals['_RETRIEVEREQUEST']._serialized_start=119
+  _globals['_RETRIEVEREQUEST']._serialized_end=148
+  _globals['_MATCHESRETRIEVERESPONSE']._serialized_start=151
+  _globals['_MATCHESRETRIEVERESPONSE']._serialized_end=601
+  _globals['_MATCHESRETRIEVERESPONSE_TOURNAMENT']._serialized_start=445
+  _globals['_MATCHESRETRIEVERESPONSE_TOURNAMENT']._serialized_end=497
+  _globals['_MATCHESRETRIEVERESPONSE_HOMETEAM']._serialized_start=499
+  _globals['_MATCHESRETRIEVERESPONSE_HOMETEAM']._serialized_end=549
+  _globals['_MATCHESRETRIEVERESPONSE_AWAYTEAM']._serialized_start=551
+  _globals['_MATCHESRETRIEVERESPONSE_AWAYTEAM']._serialized_end=601
+  _globals['_MATCHESCONTROLLER']._serialized_start=604
+  _globals['_MATCHESCONTROLLER']._serialized_end=759
 # @@protoc_insertion_point(module_scope)

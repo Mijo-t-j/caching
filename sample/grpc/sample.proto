@@ -6,7 +6,9 @@ package matches;
 
 service MatchesController {
     rpc Retrieve(RetrieveRequest) returns (MatchesRetrieveResponse) {}
+    rpc List(ListRequest) returns (MatchesListResponse) {}
 }
+message ListRequest {}
 message MatchesListResponse {
     repeated MatchesRetrieveResponse results = 1;
 }
