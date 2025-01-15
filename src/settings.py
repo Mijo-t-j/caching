@@ -140,10 +140,10 @@ GRPC_FRAMEWORK = {
         ("grpc.keepalive_timeout_ms", 20000)
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
         "rest_framework.authentication.TokenAuthentication",
     ),
-    # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     "MAP_METADATA_KEYS": {
         "PAGINATION": "PAGINATION",
